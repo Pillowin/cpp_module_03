@@ -6,7 +6,7 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:16:45 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/15 16:00:33 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:12:36 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 #include <iostream>
 
 /*
-**	Copy constructor.
-*/
-ClapTrap::ClapTrap(ClapTrap const& clap_trap) { *this = clap_trap; }
-
-/*
-**	Parametric constructor.
+**	Default and parametric constructor.
 */
 ClapTrap::ClapTrap(std::string const& name) :
 	_name(name), _life_points(60), _hit_points(10), _energy_points(10),
 	_attack_damage(0) {
 	std::cout << "A new ClapTrap arrived ! Welcome " << *this << std::endl;
 }
+
+/*
+**	Copy constructor.
+*/
+ClapTrap::ClapTrap(ClapTrap const& ct) { *this = ct; }
 
 /*
 **	Destructor.
@@ -114,8 +114,8 @@ unsigned int ClapTrap::getAttackDamage(void) const {
 /*
 **	Assignment operator.
 */
-ClapTrap& ClapTrap::operator=(ClapTrap const& clap_trap) {
-	if (this == &clap_trap)
+ClapTrap& ClapTrap::operator=(ClapTrap const& ct) {
+	if (this == &ct)
 		return (*this);
 	return (*this);
 }

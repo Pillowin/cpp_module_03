@@ -6,7 +6,7 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:14:31 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/15 15:24:18 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:12:54 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 class ClapTrap {
 	public:
-		ClapTrap(ClapTrap const& sample);
-		ClapTrap(std::string const& name);
+		ClapTrap(std::string const& name = "Unnamed");
+		ClapTrap(ClapTrap const& ct);
 
 		virtual ~ClapTrap(void);
 
@@ -34,11 +34,9 @@ class ClapTrap {
 		unsigned int getEnergyPoints(void) const;
 		unsigned int getAttackDamage(void) const;
 
-		ClapTrap& operator=(ClapTrap const& sample);
+		ClapTrap& operator=(ClapTrap const& ct);
 
 	private:
-		ClapTrap(void);
-
 		std::string _name;
 		unsigned int _life_points;
 		unsigned int _hit_points;
