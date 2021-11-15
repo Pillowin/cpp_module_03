@@ -6,7 +6,7 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:16:45 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/15 18:12:36 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/15 19:45:48 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ ClapTrap::ClapTrap(std::string const& name) :
 /*
 **	Copy constructor.
 */
-ClapTrap::ClapTrap(ClapTrap const& ct) { *this = ct; }
+ClapTrap::ClapTrap(ClapTrap const& ct) {
+	*this = ct;
+	std::cout << "A new ClapTrap arrived ! Welcome " << *this << std::endl;
+}
 
 /*
 **	Destructor.
