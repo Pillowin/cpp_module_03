@@ -6,7 +6,7 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:16:45 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/15 19:45:48 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/16 20:48:59 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,38 +19,33 @@
 ClapTrap::ClapTrap(std::string const& name) :
 	_name(name), _life_points(60), _hit_points(10), _energy_points(10),
 	_attack_damage(0) {
-	std::cout << "A new ClapTrap arrived ! Welcome " << *this << std::endl;
+	std::cout << "A new ClapTrap arrived ! Welcome " << *this;
 }
 
 /*
 **	Copy constructor.
 */
-ClapTrap::ClapTrap(ClapTrap const& ct) {
-	*this = ct;
-	std::cout << "A new ClapTrap arrived ! Welcome " << *this << std::endl;
-}
+ClapTrap::ClapTrap(ClapTrap const& ct) { *this = ct; }
 
 /*
 **	Destructor.
 */
-ClapTrap::~ClapTrap(void) {
-	std::cout << std::endl << "See you soon ClapTrap " << *this;
-}
+ClapTrap::~ClapTrap(void) { std::cout << "See you soon ClapTrap " << *this; }
 
 /*
 **	Attacks a target.
 */
 void ClapTrap::attack(std::string const& target) {
 	if (!_energy_points) {
-		std::cout << "ClapTrap " << _name
-				  << " miss because he is out of energy point !" << std::endl;
+		std::cout << _name << " miss because he is out of energy point !"
+				  << std::endl;
 		return;
 	}
 	_energy_points -= 1;
-	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing "
+	std::cout << _name << " clap attacks " << target << ", causing "
 			  << _attack_damage << " points of damage !" << std::endl;
-	std::cout << "ClapTrap " << _name << " now have " << _energy_points
-			  << " energy points." << std::endl;
+	std::cout << _name << " now have " << _energy_points << " energy points."
+			  << std::endl;
 }
 
 /*
@@ -58,24 +53,24 @@ void ClapTrap::attack(std::string const& target) {
 */
 void ClapTrap::takeDamage(unsigned int amount) {
 	_hit_points += amount;
-	std::cout << "ClapTrap " << _name << " takes " << amount
-			  << " points of damage !" << std::endl;
+	std::cout << _name << " takes " << amount << " points of damage !"
+			  << std::endl;
 	if (_hit_points > _life_points)
-		std::cout << "ClapTrap " << _name << " died. :(" << std::endl;
+		std::cout << _name << " died. :(" << std::endl;
 	else
-		std::cout << "ClapTrap " << _name << " now have "
-				  << _life_points - _hit_points << " life points." << std::endl;
+		std::cout << _name << " now have " << _life_points - _hit_points
+				  << " life points." << std::endl;
 }
 
 /*
 **	Be repaired, remove hit points.
 */
 void ClapTrap::beRepaired(unsigned int amount) {
-	std::cout << "ClapTrap " << _name << " got repaired of " << amount
-			  << " points of damage !" << std::endl;
+	std::cout << _name << " got repaired of " << amount << " points of damage !"
+			  << std::endl;
 	_hit_points >= amount ? _hit_points -= amount : _hit_points = 0;
-	std::cout << "ClapTrap " << _name << " now have "
-			  << _life_points - _hit_points << " life points." << std::endl;
+	std::cout << _name << " now have " << _life_points - _hit_points
+			  << " life points." << std::endl;
 }
 
 /*
@@ -83,8 +78,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
 */
 void ClapTrap::equipWeapon(unsigned int amount) {
 	_attack_damage = amount;
-	std::cout << "ClapTrap " << _name << " equips a new weapon which deals "
-			  << amount << " points of damage !" << std::endl;
+	std::cout << _name << " equips a new weapon which deals " << amount
+			  << " points of damage !" << std::endl;
 }
 
 /*
@@ -120,6 +115,11 @@ unsigned int ClapTrap::getAttackDamage(void) const {
 ClapTrap& ClapTrap::operator=(ClapTrap const& ct) {
 	if (this == &ct)
 		return (*this);
+	_name		   = ct._name;
+	_life_points   = ct._life_points;
+	_energy_points = ct._energy_points;
+	_attack_damage = ct._attack_damage;
+	std::cout << "A new ClapTrap arrived ! Welcome " << *this;
 	return (*this);
 }
 
