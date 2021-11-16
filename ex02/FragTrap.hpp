@@ -6,7 +6,7 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:20:39 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/15 20:38:17 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/16 20:56:02 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class FragTrap: public ClapTrap {
 		void attack(std::string const& target);
 		void highFivesGuys(void) const;
 
-		FragTrap& operator=(FragTrap const& ft);
+		FragTrap& operator=(FragTrap const&);
 
 	private:
 };

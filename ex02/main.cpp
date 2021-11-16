@@ -6,7 +6,7 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:14:08 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/15 20:43:35 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/16 20:59:51 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 int main(void) {
 	ClapTrap antoine("Antoine");
 	ClapTrap tonton("Tonton Xavier");
+	std::cout << std::endl;
 
 	antoine.attack("Tonton Xavier");
 	std::cout << std::endl;
@@ -37,9 +38,10 @@ int main(void) {
 	antoine.takeDamage(tonton.getAttackDamage());
 	std::cout << std::endl;
 
-	std::cout << "----------------------------------" << std::endl << std::endl;
+	std::cout << "- scav trap ----------------------" << std::endl << std::endl;
 
 	ScavTrap oulet("Oulet");
+	std::cout << std::endl;
 
 	oulet.attack("Antoine");
 	std::cout << std::endl;
@@ -57,9 +59,10 @@ int main(void) {
 	oulet.guardGate();
 	std::cout << std::endl;
 
-	std::cout << "----------------------------------" << std::endl << std::endl;
+	std::cout << "- frag trap ----------------------" << std::endl << std::endl;
 
 	FragTrap norminet("Norminet");
+	std::cout << std::endl;
 
 	norminet.attack("Tonton Xavier");
 	std::cout << std::endl;
