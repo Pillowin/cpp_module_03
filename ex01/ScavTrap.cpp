@@ -6,7 +6,7 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:43:28 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/15 20:33:48 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/16 20:46:51 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,13 @@ ScavTrap::ScavTrap(std::string const& name) : ClapTrap(name) {
 	_hit_points	   = 100;
 	_energy_points = 50;
 	_attack_damage = 20;
-	std::cout << "A new ScavTrap arrived ! Welcome " << *this << std::endl;
+	std::cout << "A new ScavTrap arrived ! Welcome " << *this;
 }
 
 /*
 **	Copy constructor.
 */
-ScavTrap::ScavTrap(ScavTrap const& st) {
-	*this = st;
-	std::cout << "A new ScavTrap arrived ! Welcome " << *this << std::endl;
-}
+ScavTrap::ScavTrap(ScavTrap const& st) { *this = st; }
 
 /*
 **	Destructor.
@@ -44,8 +41,7 @@ ScavTrap::~ScavTrap(void) {
 **	Put ScavTrap in Gate keeper mode.
 */
 void ScavTrap::guardGate(void) const {
-	std::cout << "ScavTrap " << _name << " has enterred in Gate keeper mode."
-			  << std::endl;
+	std::cout << _name << " has enterred in Gate keeper mode." << std::endl;
 }
 
 /*
@@ -53,23 +49,22 @@ void ScavTrap::guardGate(void) const {
 */
 void ScavTrap::attack(std::string const& target) {
 	if (!_energy_points) {
-		std::cout << "ScavTrap " << _name
-				  << " miss because he is out of energy point !" << std::endl;
+		std::cout << _name << " miss because he is out of energy point !"
+				  << std::endl;
 		return;
 	}
 	_energy_points -= 1;
-	std::cout << "ScavTrap " << _name << " attacks " << target << ", causing "
+	std::cout << _name << " scav attacks " << target << ", causing "
 			  << _attack_damage << " points of damage !" << std::endl;
-	std::cout << "ScavTrap " << _name << " now have " << _energy_points
-			  << " energy points." << std::endl;
+	std::cout << _name << " now have " << _energy_points << " energy points."
+			  << std::endl;
 }
 
 /*
 **	Assignment operator.
 */
-ScavTrap& ScavTrap::operator=(ScavTrap const& st) {
-	if (this == &st)
-		return (*this);
+ScavTrap& ScavTrap::operator=(ScavTrap const&) {
+	std::cout << "A new ScavTrap arrived ! Welcome " << *this;
 	return (*this);
 }
 

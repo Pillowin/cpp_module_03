@@ -6,7 +6,7 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:14:08 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/15 20:32:59 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/16 20:47:44 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 int main(void) {
 	ClapTrap antoine("Antoine");
 	ClapTrap tonton("Tonton Xavier");
+	std::cout << std::endl;
 
 	antoine.attack("Tonton Xavier");
 	std::cout << std::endl;
@@ -35,9 +36,10 @@ int main(void) {
 	std::cout << std::endl;
 	antoine.takeDamage(tonton.getAttackDamage());
 
-	std::cout << std::endl << " --------------------" << std::endl << std::endl;
+	std::cout << std::endl << "- scav trap ---------" << std::endl << std::endl;
 
 	ScavTrap oulet("Oulet");
+	std::cout << std::endl;
 
 	oulet.attack("Antoine");
 	std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:20:39 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/15 20:18:59 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/16 20:46:59 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ScavTrap: public ClapTrap {
 		void attack(std::string const& target);
 		void guardGate(void) const;
 
-		ScavTrap& operator=(ScavTrap const& st);
+		ScavTrap& operator=(ScavTrap const&);
 
 	private:
 };
