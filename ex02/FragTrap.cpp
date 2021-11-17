@@ -28,7 +28,7 @@ FragTrap::FragTrap(std::string const& name) : ClapTrap(name) {
 /*
 **	Copy constructor.
 */
-FragTrap::FragTrap(FragTrap const& ft) { *this = ft; }
+FragTrap::FragTrap(FragTrap const& ft) : ClapTrap(ft._name) { *this = ft; }
 
 /*
 **	Destructor.

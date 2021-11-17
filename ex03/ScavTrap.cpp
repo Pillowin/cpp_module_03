@@ -36,7 +36,7 @@ ScavTrap::ScavTrap(std::string const& name) : ClapTrap(name) {
 /*
 **	Copy constructor.
 */
-ScavTrap::ScavTrap(ScavTrap const& st) { *this = st; }
+ScavTrap::ScavTrap(ScavTrap const& st) : ClapTrap(st._name) { *this = st; }
 
 /*
 **	Destructor.
