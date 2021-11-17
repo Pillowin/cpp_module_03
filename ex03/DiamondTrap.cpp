@@ -27,8 +27,9 @@ DiamondTrap::DiamondTrap(std::string const& name) :
 **	Copy constructor.
 */
 DiamondTrap::DiamondTrap(DiamondTrap const& dt) :
-	ClapTrap(dt._name), FragTrap(dt._name), ScavTrap()
-{ *this = dt; }
+	ClapTrap(dt._name), FragTrap(dt._name), ScavTrap() {
+	*this = dt;
+}
 
 /*
 **	Destructor.
